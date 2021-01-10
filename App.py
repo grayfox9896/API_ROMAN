@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify
 
 app=Flask(__name__)
+@app.route('/',methods=['GET'])
+def help():   
+    return "usage: {'roman':'XXV'}"
 
 @app.route('/calcula',methods=['POST'])
 def calcula():
