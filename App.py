@@ -6,8 +6,8 @@ def help():
     return "usage:method post:calcula, data {'roman':'XXV'}"
 
 @app.route('/calcula',methods=['GET'])
-def calcula():
-    val=solution(request.args.get["roman"])
+def calculaget():
+    val=solution(request.args.get("roman"))
     res={"resultado":val}   
     return jsonify(res)
 
