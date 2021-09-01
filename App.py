@@ -5,6 +5,12 @@ app=Flask(__name__)
 def help():   
     return "usage:method post:calcula, data {'roman':'XXV'}"
 
+@app.route('/calcula',methods=['GET'])
+def calcula():
+    val=solution(request.args.get["roman"])
+    res={"resultado":val}   
+    return jsonify(res)
+
 @app.route('/calcula',methods=['POST'])
 def calcula():
     val=solution(request.json["roman"])
