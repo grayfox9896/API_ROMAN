@@ -1,6 +1,8 @@
+from flask_cors import CORS
 from flask import Flask, request, jsonify
 
 app=Flask(__name__)
+CORS(app)
 @app.route('/',methods=['GET'])
 def help():   
     return "usage:method post:calcula, data {'roman':'XXV'}"
